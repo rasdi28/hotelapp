@@ -1,0 +1,19 @@
+.section-invoice {
+    height: auto;
+
+}
+
+.section-invoice .wrapper {
+    min-height: 30vh;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+}
+
+.invoice-body .form-group .invoice-input {
+    padding: 8px;
+    padding-left: 10px;
+}
+
+.invoice-body .invoice-data {
+    background-color: #ecf0f1;
+}

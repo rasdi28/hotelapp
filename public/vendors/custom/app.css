@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../asset/Ubuntu-Regular.ttf');
+}
+
+html {scroll-behavior:smooth}
+
+body {
+    background-color: white;
+    font-family: 'Roboto';
+}
+
+.navbar-expand-lg {
+    background-color: #2874f0;
+    color:white;
+}
+
+.collapse .navbar-nav .nav-item .nav-link{
+    color : white;
+}
+
+.section-footer {
+    background-color:  #2874f0;
+}
+.section-footer .container .border-top .row .col-12 .mb-3{
+   color : white;
+}
+.section-footer .container .border-top .row .col-6 .text-muted{
+    color : white;
+ }
+
+.promo-body {
+    border-radius: 15px;
+    background-color: #e9ecef;
+}
+
+.promo-body {
+    margin-top: -30px;
+}
+
+.jumbotron {
+    /* height: 100vh; */
+    border-radius: 0% !important;
+}
+
+.banner {
+    height: 50vh;
+}
+
+.carousel {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.section-product {
+    background-color: white;
+}
+
+.text-utama {
+    color: #141432;
+}
+
+.card-border {
+    border-radius: 15px;
+}
+
+.image-border {
+    border-radius: 15px 15px 0px 0px;
+}
+
+.nav-etalase {
+    text-align: center;
+}
+
+.product-etalase {
+    margin: -5px 0px;
+    color: black;
+}
+
+.carousel-inner .carousel-item {
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:rgb(237, 237, 237);
+	color:white;
+	border-radius:50px;
+	text-align:center;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+/* 
+chart with number  */
+
+.cart-button {
+    background-color: #2469d9;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
+    padding: 10px 0;
+    text-align: center;
+    height: 41px;
+    border-radius: 2px;
+    font-weight: 500;
+    width: 120px;
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+
+.cart-button:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.cart-svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+
+
+.section-invoice,
+.section-info-payment
+{
+    min-height: 70vh;
+}
+
+
