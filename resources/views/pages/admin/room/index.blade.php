@@ -39,7 +39,8 @@
                         @forelse ($rooms as $room)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$room->type->name}}</td>
+                            <td><a href="{{route('room.show', $room->id)}}">{{$room->type->name}}</a>
+                                </td>
                             <td>{{$room->capasity}}</td>
                             <td>Rp. {{number_format($room->price,2,',','.')}}</td>
                             <td>Update Delete</td>

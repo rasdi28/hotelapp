@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Facilities;
+use App\Model\Facility_room;
 use App\Model\Images;
 use App\Model\Room;
 use App\Model\Room_statuses;
 use App\Model\Types;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
@@ -39,10 +42,12 @@ class RoomController extends Controller
     {
         $roomstatus = Room_statuses::all();
         $types = Types::all();
+        $facilities = Facilities::all();
 
         return view('pages.admin.room.create')->with([
             'types'=>$types,
-            'roomstatus'=>$roomstatus
+            'roomstatus'=>$roomstatus,
+            'facilities'=>$facilities
         ]);
     }
 
@@ -55,8 +60,20 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $room = $request->all();
-        // dd($room);
-        Room::create($room);
+        $test['facility_id'] = $room['facilities'];
+        $room = Room::create($room);
+        $test['room_id']= $room->id;
+        
+        
+        foreach ($test['facility_id'] as $item){
+            $facilitas['facility_id']= $item;
+            $facilitas['room_id']= $room->id;
+            Facility_room::create($facilitas);
+        }
+       
+    //    dd($facilitas);
+    //    dd($test);
+
         return redirect()->route('room.index');
     }
 
@@ -76,7 +93,7 @@ class RoomController extends Controller
             'assets/image','public'
         );
         Images::create($gambar);
-        return redirect('room.index');
+        return redirect()->route('room.index');
     }
 
     /**
@@ -87,7 +104,13 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        //
+        $images = DB::table('images')->where('room_id', $id)->get();
+        $room = Room::findOrFail($id);
+        return view('pages.admin.room.detail')->with([
+            'images'=>$images,
+            'room'=>$room
+        ]);
+       
     }
 
     /**

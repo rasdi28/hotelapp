@@ -29,9 +29,12 @@ Route::prefix('backend')->group(function(){
         Route::get('/','Admin\RoomController@index')->name('room.index');
         Route::get('/create','Admin\RoomController@create')->name('room.create');
         Route::post('/','Admin\RoomController@store')->name('room.store');
+        Route::get('/{id}','Admin\RoomController@show')->name('room.show');
         Route::get('/gambar/{id}','Admin\RoomController@tambahgambar')->name('image.add');
         Route::post('/image','Admin\RoomController@gambarstore')->name('gambar.store');
     });
+    
+    Route::resource('/facilities',Admin\FacilitiesController::class);
 });
 
 

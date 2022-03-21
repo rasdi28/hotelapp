@@ -31,4 +31,5 @@ CKEDITOR.replace( 'visi' );
 CKEDITOR.replace( 'misi' );
 CKEDITOR.replace('description');
 CKEDITOR.replace('body');
+$('.carousel').carousel()
 </script>

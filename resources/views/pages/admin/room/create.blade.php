@@ -14,7 +14,7 @@
             <div class="card-body card-block">
                 <form action="{{route('room.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                     <div class="form-group">
+                    <div class="form-group">
                         <label for="type_id" class="form-control-lable">Type  </label>
                         <select name="type_id" class="form-control  @error('type_id') is-invalid @enderror">
                             @foreach ($types as $type)
@@ -47,6 +47,15 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="facilities" class="form-control-lable">Facilitas</label>
+                        <br>
+                        @foreach ($facilities as $facility)
+                        <input type="checkbox" name="facilities[]" value="{{$facility->id}}" > {{$facility->name}} <p>
+                        @endforeach
+                    </div>
+                    
     
                     <div class="form-group">
                         <button class="btn btn-primary btn-block" type="submit">
