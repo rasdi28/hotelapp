@@ -15,6 +15,10 @@
                 <form action="{{route('room.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
+                        <label for="view" class="form-control-lable">Nama Kamar</label>
+                        <input type="text" class="form-control" name="view">
+                    </div>
+                    <div class="form-group">
                         <label for="type_id" class="form-control-lable">Type  </label>
                         <select name="type_id" class="form-control  @error('type_id') is-invalid @enderror">
                             @foreach ($types as $type)
@@ -35,10 +39,7 @@
                         <label for="harga" class="form-control-lable">Price</label>
                         <input type="number" class="form-control" name="price">
                     </div>
-                    <div class="form-group">
-                        <label for="view" class="form-control-lable">View</label>
-                        <input type="text" class="form-control" name="view">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="type_id" class="form-control-lable">Room Status</label>
                         <select name="room_status_id" class="form-control  @error('room_status_id') is-invalid @enderror">

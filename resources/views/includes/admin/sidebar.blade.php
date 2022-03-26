@@ -37,8 +37,8 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Components:</h6>
                 <a class="collapse-item" href="{{route('room.index')}}">Room</a>
-                <a class="collapse-item" href="{{route('facilities.index')}}">Fasilitas</a>
-                <a class="collapse-item" href="">Transactions</a>
+                <a class="collapse-item" href="{{route('transaction.index')}}">Transactions</a>
+                <a class="collapse-item" href="{{route('transaction.checkout')}}">Checkout</a>
                 <a class="collapse-item" href="">Report</a>
             </div>
         </div>

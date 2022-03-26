@@ -33,6 +33,16 @@
                     <h4>{{$room->type->name}}</h4>
                </div>
                <div class="card-body">
+                   <h3>Facilitas </h3>
+                   @foreach ($facilitas as $item)
+                       <tr>
+                           <td>{{$loop->iteration}}</td>
+                           <td>{{$item->name}}</td>
+                           <td>{{$item->detail}}</td>
+                       </tr>
+                   @endforeach
+
+                   
                </div>
                
           </div>

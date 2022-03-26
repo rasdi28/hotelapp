@@ -106,9 +106,11 @@ class RoomController extends Controller
     {
         $images = DB::table('images')->where('room_id', $id)->get();
         $room = Room::findOrFail($id);
+        $facilitas = DB::table('facility_rooms')->join('facilities','facility_id','=','facilities.id')->where('room_id',$id)->get();
         return view('pages.admin.room.detail')->with([
             'images'=>$images,
-            'room'=>$room
+            'room'=>$room,
+            'facilitas'=>$facilitas
         ]);
        
     }

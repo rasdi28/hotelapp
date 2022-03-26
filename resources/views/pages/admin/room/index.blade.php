@@ -27,9 +27,11 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Nama Kamar</th>
                             <th>Type</th>
                             <th>Kapasitas</th>
                             <th>Harga</th>
+                            <th>Status </th>
                             <th>Action</th>
                             <td>Tambah Gambar</td>
                             
@@ -39,10 +41,16 @@
                         @forelse ($rooms as $room)
                         <tr>
                             <td>{{$loop->iteration}}</td>
+                            <td>{{$room->view}}</td>
                             <td><a href="{{route('room.show', $room->id)}}">{{$room->type->name}}</a>
                                 </td>
                             <td>{{$room->capasity}}</td>
                             <td>Rp. {{number_format($room->price,2,',','.')}}</td>
+                            @if ($room->room_status=='1')
+                                <td>Sudah Terisi</td>
+                            @else
+                                <td>Belum Terisi</td>
+                            @endif
                             <td>Update Delete</td>
                             <td>
                             <a href="{{route('image.add',$room->id)}}" type="button" class="btn btn-secondary">Tambah Gambar</a>

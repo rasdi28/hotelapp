@@ -4,9 +4,9 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Facilities extends Model
+class Transaksi extends Model
 {
     protected $fillable = [
-        'name','detail'
+        'nama','no_telp','room_id','checkout'
     ];
 }

@@ -34,6 +34,11 @@ Route::prefix('backend')->group(function(){
         Route::post('/image','Admin\RoomController@gambarstore')->name('gambar.store');
     });
     
+    Route::prefix('/transaction')->group(function(){
+        Route::get('/checkout','Admin\TransactionController@checkout')->name('transaction.checkout');
+        Route::post('/checkout','Admin\TransactionController@keluar')->name('transaction.keluar');
+    });
+    Route::resource('/transaction',Admin\TransactionController::class);
     Route::resource('/facilities',Admin\FacilitiesController::class);
 });
 
